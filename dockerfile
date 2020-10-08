@@ -38,7 +38,7 @@ RUN apk update --no-cache  && apk add --no-cache  curl xvfb chromium
 
 ADD xvfb-chromium /usr/bin/xvfb-chromium
 
-RUN ["chmod", "+x", "/usr/local/bin/xvfb-chromium "] 
+RUN ["chmod", "+x", "/usr/local/bin/xvfb-chromium"] 
 
 RUN ln -s /usr/bin/xvfb-chromium /usr/bin/google-chrome
 
