@@ -21,13 +21,14 @@ RUN mkdir -p "${JENKINS_AGENT_HOME}" \
 RUN apk update --no-cache \
     && apk add --no-cache \
         bash \
-        openssh
+        openssh \
+        git
 
 RUN sed -i /etc/ssh/sshd_config \
         -e 's/#PermitRootLogin.*/PermitRootLogin no/' \
         -e 's/#PasswordAuthentication.*/PasswordAuthentication no/' \
         -e 's/#SyslogFacility.*/SyslogFacility AUTH/' \
-        -e 's/#LogLevel.*/LogLevel INFO/' \
+        -e 's/#LogLevel.*/LogLevel DEBUG3/' \
     && mkdir /var/run/sshd
 
 VOLUME "${JENKINS_AGENT_HOME}" "/tmp" "/run" "/var/run"
