@@ -1,6 +1,6 @@
 # FROM openjdk:8-jdk-buster
 
-FROM adoptopenjdk/openjdk8:jdk8u262-b10-alpine
+FROM openjdk:17-jdk-alpine3.14
 
 ARG user=jenkins
 ARG group=jenkins
